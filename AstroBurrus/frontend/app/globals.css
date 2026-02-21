@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #080c18;
+  --background: #c1d0ff;
   --foreground: #e8edf5;
   --card: #0d1225;
   --card-foreground: #e8edf5;
@@ -95,7 +95,7 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(8, 12, 24, 0.5);
+  background: rgba(124, 138, 183, 0.5);
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(56, 182, 232, 0.2);

@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useEffect } from "react"
-import { ShieldAlert, Send } from "lucide-react"
+import { Terminal, Send, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
 interface ChatMessage {
@@ -27,163 +27,164 @@ export function ChatTerminal({
   isCritical,
 }: ChatTerminalProps) {
   const chatEndRef = useRef<HTMLDivElement>(null)
+  const accent = isCritical ? "#e84040" : "#38b6e8"
+  const panelClass = isCritical ? "hud-panel-critical" : "hud-panel"
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [chatHistory])
 
   return (
-    <div
-      className="rounded-xl overflow-hidden transition-all duration-700"
-      style={{
-        backgroundColor: "rgba(13, 18, 37, 0.85)",
-        border: `1px solid ${isCritical ? "rgba(232, 64, 64, 0.3)" : "rgba(56, 182, 232, 0.15)"}`,
-        backdropFilter: "blur(12px)",
-      }}
-    >
+    <div className={`${panelClass} rounded-xl overflow-hidden transition-all duration-700`}>
       {/* Terminal header */}
       <div
-        className="flex items-center gap-2 px-4 py-3 font-mono text-xs tracking-widest"
+        className="flex items-center gap-2 px-4 py-2.5 font-mono text-[10px] tracking-[0.2em]"
         style={{
-          color: isCritical ? "#e84040" : "#38b6e8",
-          borderBottom: `1px solid ${isCritical ? "rgba(232, 64, 64, 0.2)" : "rgba(56, 182, 232, 0.1)"}`,
-          backgroundColor: "rgba(8, 12, 24, 0.5)",
+          color: accent,
+          borderBottom: `1px solid ${accent}15`,
+          backgroundColor: "rgba(5, 8, 16, 0.5)",
         }}
       >
-        <ShieldAlert size={14} />
+        <Terminal size={12} />
         <span>PSYCH-LINK TERMINAL</span>
-        <div className="ml-auto flex items-center gap-2">
-          <span
-            className="inline-block w-2 h-2 rounded-full animate-pulse"
-            style={{ backgroundColor: isCritical ? "#e84040" : "#38b6e8" }}
-          />
-          <span style={{ color: "#6882a8" }}>LIVE</span>
+        <div className="ml-auto flex items-center gap-3">
+          <span className="text-[8px] tracking-wider" style={{ color: "#5a7098" }}>
+            SESSION ACTIVE
+          </span>
+          <div className="flex items-center gap-1.5">
+            <span
+              className="w-1.5 h-1.5 rounded-full animate-pulse"
+              style={{ backgroundColor: accent, boxShadow: `0 0 6px ${accent}60` }}
+            />
+            <span style={{ color: "#5a7098" }} className="text-[9px]">LIVE</span>
+          </div>
         </div>
       </div>
 
-      {/* Chat messages */}
+      {/* Messages */}
       <div
         className="overflow-y-auto px-4 py-4 flex flex-col gap-3"
-        style={{ maxHeight: "380px", minHeight: "280px" }}
+        style={{ maxHeight: "400px", minHeight: "300px" }}
       >
         {chatHistory.length === 0 && (
-          <div
-            className="text-center py-12 font-mono text-sm"
-            style={{ color: "#6882a8" }}
-          >
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <span
-                className="inline-block w-1.5 h-1.5 rounded-full animate-pulse"
-                style={{ backgroundColor: "#38b6e8" }}
-              />
-              <span
-                className="inline-block w-1.5 h-1.5 rounded-full animate-pulse"
-                style={{ backgroundColor: "#38b6e8", animationDelay: "0.2s" }}
-              />
-              <span
-                className="inline-block w-1.5 h-1.5 rounded-full animate-pulse"
-                style={{ backgroundColor: "#38b6e8", animationDelay: "0.4s" }}
+          <div className="flex flex-col items-center justify-center py-16 gap-4">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden" style={{ border: `1px solid ${accent}30` }}>
+              <Image
+                src="/images/robot-peek.jpg"
+                alt="ARES AI"
+                width={48}
+                height={48}
+                className="w-full h-full object-cover opacity-60"
               />
             </div>
-            Waiting for biometric data stream...
+            <div className="text-center">
+              <p className="text-[10px] font-mono tracking-[0.2em] mb-2" style={{ color: "#5a7098" }}>
+                PSYCH-LINK READY
+              </p>
+              <div className="flex items-center justify-center gap-1">
+                {[0, 0.15, 0.3].map((delay, i) => (
+                  <span
+                    key={i}
+                    className="inline-block w-1 h-1 rounded-full animate-pulse"
+                    style={{ backgroundColor: accent, animationDelay: `${delay}s` }}
+                  />
+                ))}
+              </div>
+            </div>
+            <p className="text-[9px] font-mono tracking-wider" style={{ color: "#5a709860" }}>
+              Awaiting biometric data stream...
+            </p>
           </div>
         )}
 
         {chatHistory.map((m, i) => (
           <div
             key={i}
-            className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+            className={`flex ${m.role === "user" ? "justify-end" : "justify-start"} gap-2`}
           >
+            {/* Robot avatar for assistant */}
             {m.role === "assistant" && (
-              <div className="relative mr-2 flex-shrink-0 self-end">
-                <div className="w-8 h-8 rounded-full overflow-hidden border"
-                  style={{ borderColor: isCritical ? "#e84040" : "#38b6e8" }}
+              <div className="flex-shrink-0 self-end">
+                <div
+                  className="w-7 h-7 rounded-full overflow-hidden"
+                  style={{ border: `1px solid ${accent}40` }}
                 >
                   <Image
                     src="/images/robot-peek.jpg"
                     alt="ARES_AI"
-                    width={32}
-                    height={32}
+                    width={28}
+                    height={28}
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
             )}
+
             <div
-              className="max-w-[75%] rounded-xl px-4 py-3 transition-all duration-500"
+              className="max-w-[75%] rounded-lg px-4 py-3 transition-all duration-500"
               style={
                 m.role === "user"
                   ? {
-                      backgroundColor: "rgba(56, 182, 232, 0.12)",
-                      border: "1px solid rgba(56, 182, 232, 0.2)",
-                      color: "#e8edf5",
+                      backgroundColor: `${accent}08`,
+                      border: `1px solid ${accent}15`,
+                      color: "#e0e8f5",
                     }
                   : {
-                      backgroundColor: isCritical
-                        ? "rgba(232, 64, 64, 0.08)"
-                        : "rgba(30, 144, 200, 0.08)",
-                      border: `1px solid ${isCritical ? "rgba(232, 64, 64, 0.2)" : "rgba(30, 144, 200, 0.15)"}`,
-                      color: "#e8edf5",
+                      backgroundColor: isCritical ? "rgba(232, 64, 64, 0.05)" : "rgba(30, 144, 200, 0.05)",
+                      border: `1px solid ${isCritical ? "rgba(232, 64, 64, 0.12)" : "rgba(30, 144, 200, 0.1)"}`,
+                      color: "#e0e8f5",
                     }
               }
             >
               <span
-                className="block text-[10px] font-mono tracking-wider mb-1"
+                className="block text-[8px] font-mono tracking-[0.25em] mb-1.5"
                 style={{
-                  color: m.role === "user"
-                    ? "#38b6e8"
-                    : isCritical
-                      ? "#e84040"
-                      : "#1e90c8",
+                  color: m.role === "user" ? `${accent}90` : isCritical ? "#e8404090" : "#1e90c890",
                 }}
               >
                 {m.role === "user"
-                  ? identity !== "STANDBY"
-                    ? identity
-                    : "CREW"
+                  ? identity !== "STANDBY" ? identity : "CREW_MEMBER"
                   : "ARES_AI"}
               </span>
-              <p className="text-sm leading-relaxed">{m.content}</p>
+              <p className="text-[13px] leading-relaxed font-light">{m.content}</p>
             </div>
           </div>
         ))}
         <div ref={chatEndRef} />
       </div>
 
-      {/* Input area */}
+      {/* Input */}
       <form
         onSubmit={onSend}
         className="flex items-center gap-3 px-4 py-3"
         style={{
-          borderTop: `1px solid ${isCritical ? "rgba(232, 64, 64, 0.15)" : "rgba(56, 182, 232, 0.1)"}`,
-          backgroundColor: "rgba(8, 12, 24, 0.4)",
+          borderTop: `1px solid ${accent}10`,
+          backgroundColor: "rgba(5, 8, 16, 0.4)",
         }}
       >
+        <ChevronRight size={14} style={{ color: `${accent}50` }} className="flex-shrink-0" />
         <input
-          className="flex-1 bg-transparent px-3 py-2 text-sm font-mono rounded-lg focus:outline-none focus:ring-1 transition-all"
+          className="flex-1 bg-transparent px-2 py-2 text-sm font-mono rounded-md focus:outline-none transition-all placeholder:tracking-wider"
           style={{
-            color: "#e8edf5",
-            border: `1px solid ${isCritical ? "rgba(232, 64, 64, 0.2)" : "rgba(56, 182, 232, 0.15)"}`,
-            backgroundColor: "rgba(13, 18, 37, 0.5)",
+            color: "#e0e8f5",
+            caretColor: accent,
           }}
           value={input}
           onChange={(e) => onInputChange(e.target.value)}
-          placeholder="Input mission status report..."
+          placeholder="Enter mission report..."
         />
         <button
           type="submit"
           disabled={!input.trim()}
-          className="p-2.5 rounded-lg font-mono text-xs tracking-wider transition-all duration-300 disabled:opacity-30 hover:scale-105"
+          className="group p-2 rounded-md transition-all duration-300 disabled:opacity-20 hover:scale-105"
           style={{
-            backgroundColor: isCritical
-              ? "rgba(232, 64, 64, 0.15)"
-              : "rgba(56, 182, 232, 0.15)",
-            color: isCritical ? "#e84040" : "#38b6e8",
-            border: `1px solid ${isCritical ? "rgba(232, 64, 64, 0.3)" : "rgba(56, 182, 232, 0.3)"}`,
+            backgroundColor: `${accent}10`,
+            color: accent,
+            border: `1px solid ${accent}20`,
           }}
           aria-label="Send message"
         >
-          <Send size={16} />
+          <Send size={14} />
         </button>
       </form>
     </div>
