@@ -1,0 +1,54 @@
+{
+  "session_key": "unknown_2wct99k",
+  "display_identity": "unknown_2wct99k",
+  "phase": "followup",
+  "current_q_index": 4,
+  "qa_store": {
+    "0": {
+      "question": "How has your sleep quality been over the last two cycles?",
+      "answer": "its good",
+      "score": 4,
+      "situation": "low",
+      "condition": "internal decision"
+    },
+    "1": {
+      "question": "Are you experiencing any difficulty focusing on mission objectives?",
+      "answer": "nope as of now",
+      "score": 4,
+      "situation": "low",
+      "condition": "internal decision"
+    },
+    "2": {
+      "question": "Do you feel a sense of disconnection from the crew or mission control?",
+      "answer": "nope",
+      "score": 4,
+      "situation": "low",
+      "condition": "internal decision"
+    },
+    "3": {
+      "question": "How would you describe your emotional state compared to mission launch day?",
+      "answer": "i am so excited and good",
+      "score": 14,
+      "situation": "high",
+      "condition": "Call the captain and the ground station"
+    }
+  },
+  "followup_question": "What's one thing that makes you feel most valued and connected to your crewmates right now?",
+  "followup_count": 5,
+  "final_report": "",
+  "overall_situation": "high",
+  "user_answer": "I don't know. but it excites me the most",
+  "reply": "What's one thing that makes you feel most valued and connected to your crewmates right now?",
+  "is_done": false,
+  "score_result": {
+    "score": 14,
+    "situation": "high",
+    "condition": "Call the captain and the ground station"
+  },
+  "is_relevant": true,
+  "psych_result": {
+    "type": "followup",
+    "content": "What's one thing that makes you feel most valued and connected to your crewmates right now?"
+  },
+  "pending_log": null
+}
