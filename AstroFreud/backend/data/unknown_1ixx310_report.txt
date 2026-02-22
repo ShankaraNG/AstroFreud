@@ -1,0 +1,54 @@
+{
+  "session_key": "unknown_1ixx310",
+  "display_identity": "unknown_1ixx310",
+  "phase": "followup",
+  "current_q_index": 4,
+  "qa_store": {
+    "0": {
+      "question": "How has your sleep quality been over the last two cycles?",
+      "answer": "bad",
+      "score": 12,
+      "situation": "high",
+      "condition": "Call the captain and the ground station"
+    },
+    "1": {
+      "question": "Are you experiencing any difficulty focusing on mission objectives?",
+      "answer": "yes",
+      "score": 12,
+      "situation": "high",
+      "condition": "Call the captain and the ground station"
+    },
+    "2": {
+      "question": "Do you feel a sense of disconnection from the crew or mission control?",
+      "answer": "yes",
+      "score": 14,
+      "situation": "high",
+      "condition": "Call the captain and the ground station"
+    },
+    "3": {
+      "question": "How would you describe your emotional state compared to mission launch day?",
+      "answer": "bad",
+      "score": 12,
+      "situation": "high",
+      "condition": "Call the captain and the ground station"
+    }
+  },
+  "followup_question": "Are you noticing any changes in your reaction time or motor skills due to these physical symptoms?",
+  "followup_count": 5,
+  "final_report": "",
+  "overall_situation": "high",
+  "user_answer": "yes",
+  "reply": "Are you noticing any changes in your reaction time or motor skills due to these physical symptoms?",
+  "is_done": false,
+  "score_result": {
+    "score": 12,
+    "situation": "high",
+    "condition": "Call the captain and the ground station"
+  },
+  "is_relevant": true,
+  "psych_result": {
+    "type": "followup",
+    "content": "Are you noticing any changes in your reaction time or motor skills due to these physical symptoms?"
+  },
+  "pending_log": null
+}

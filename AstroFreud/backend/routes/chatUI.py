@@ -62,18 +62,34 @@ async def chat(req: ChatRequest, identity: str = "Unknown", token: str = ""):
     result: ARESState = ares_graph.invoke(state)
 
     # ── persist or wipe session ───────────────────────────────────────────────
+# ── persist or wipe session ───────────────────────────────────────────────
     if result.get("is_done"):
         print(f"[ARES] Session complete for {session_key}.")
+        
+        # 1. Safely get the store
         qa_store = result.get("qa_store", {})
-        last_key = max(qa_store.keys())
-        last_score = qa_store[last_key]["score"]
-        emailcond = decisionMakingForEmail(last_score)
-        if emailcond:
-            conf = configLoader()
-            chatdatafilepath = getSessionData(session_key)
-            recipient_email = conf['email']['recipent']
-            send_astro_email(recipient_email, chatdatafilepath)
+        
+        # 2. Only proceed if there is actually data in the store
+        if qa_store:
+            # Convert keys to strings safely
+            qa_store = {str(k): v for k, v in qa_store.items()}
+            
+            # Find the last key safely
+            last_key = str(max(int(k) for k in qa_store.keys()))
+            
+            # Access score and handle email logic
+            last_score = qa_store[last_key].get("score", 0) # Added .get for safety
+            emailcond = decisionMakingForEmail(last_score)
+            
+            if emailcond:
+                conf = configLoader()
+                chatdatafilepath = getSessionData(session_key)
+                recipient_email = conf['email']['recipent']
+                send_astro_email(recipient_email, chatdatafilepath)
+        else:
+            print(f"[ARES] Warning: Session marked done but qa_store is empty.")
 
+        # Wipe session regardless of whether email was sent
         session_store.delete(session_key)
     else:
         session_store.set(session_key, result)

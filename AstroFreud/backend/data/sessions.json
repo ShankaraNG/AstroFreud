@@ -292,13 +292,6 @@
     "qa_store": {
       "0": {
         "question": "How has your sleep quality been over the last two cycles?",
-        "answer": null,
-        "score": null,
-        "situation": null,
-        "condition": null
-      },
-      "0": {
-        "question": "How has your sleep quality been over the last two cycles?",
         "answer": "not so aure",
         "score": 12,
         "situation": "high",
@@ -321,6 +314,355 @@
     "is_done": false,
     "score_result": {
       "score": 12,
+      "situation": "high",
+      "condition": "Call the captain and the ground station"
+    },
+    "is_relevant": true,
+    "psych_result": {},
+    "pending_log": null
+  },
+  "unknown_cw1g01t": {
+    "session_key": "unknown_cw1g01t",
+    "display_identity": "unknown_cw1g01t",
+    "phase": "questioning",
+    "current_q_index": 1,
+    "qa_store": {
+      "0": {
+        "question": "How has your sleep quality been over the last two cycles?",
+        "answer": "yea",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "1": {
+        "question": "Are you experiencing any difficulty focusing on mission objectives?",
+        "answer": null,
+        "score": null,
+        "situation": null,
+        "condition": null
+      }
+    },
+    "followup_question": "",
+    "followup_count": 0,
+    "final_report": "",
+    "overall_situation": "low",
+    "user_answer": "yea",
+    "reply": "Are you experiencing any difficulty focusing on mission objectives?",
+    "is_done": false,
+    "score_result": {
+      "score": 4,
+      "situation": "low",
+      "condition": "internal decision"
+    },
+    "is_relevant": true,
+    "psych_result": {},
+    "pending_log": null
+  },
+  "unknown_tegzfn9": {
+    "session_key": "unknown_tegzfn9",
+    "display_identity": "unknown_tegzfn9",
+    "phase": "questioning",
+    "current_q_index": 3,
+    "qa_store": {
+      "0": {
+        "question": "How has your sleep quality been over the last two cycles?",
+        "answer": "good",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "1": {
+        "question": "Are you experiencing any difficulty focusing on mission objectives?",
+        "answer": "nope",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "2": {
+        "question": "Do you feel a sense of disconnection from the crew or mission control?",
+        "answer": "nope",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "3": {
+        "question": "How would you describe your emotional state compared to mission launch day?",
+        "answer": null,
+        "score": null,
+        "situation": null,
+        "condition": null
+      }
+    },
+    "followup_question": "",
+    "followup_count": 0,
+    "final_report": "",
+    "overall_situation": "low",
+    "user_answer": "nope",
+    "reply": "How would you describe your emotional state compared to mission launch day?",
+    "is_done": false,
+    "score_result": {
+      "score": 4,
+      "situation": "low",
+      "condition": "internal decision"
+    },
+    "is_relevant": true,
+    "psych_result": {},
+    "pending_log": null
+  },
+  "unknown_7vblt1u": {
+    "session_key": "unknown_7vblt1u",
+    "display_identity": "unknown_7vblt1u",
+    "phase": "questioning",
+    "current_q_index": 3,
+    "qa_store": {
+      "0": {
+        "question": "How has your sleep quality been over the last two cycles?",
+        "answer": "good",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "1": {
+        "question": "Are you experiencing any difficulty focusing on mission objectives?",
+        "answer": "good",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "2": {
+        "question": "Do you feel a sense of disconnection from the crew or mission control?",
+        "answer": "good",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "3": {
+        "question": "How would you describe your emotional state compared to mission launch day?",
+        "answer": null,
+        "score": null,
+        "situation": null,
+        "condition": null
+      }
+    },
+    "followup_question": "",
+    "followup_count": 0,
+    "final_report": "",
+    "overall_situation": "low",
+    "user_answer": "good",
+    "reply": "How would you describe your emotional state compared to mission launch day?",
+    "is_done": false,
+    "score_result": {
+      "score": 4,
+      "situation": "low",
+      "condition": "internal decision"
+    },
+    "is_relevant": true,
+    "psych_result": {},
+    "pending_log": null
+  },
+  "unknown_nfqxnil": {
+    "session_key": "unknown_nfqxnil",
+    "display_identity": "unknown_nfqxnil",
+    "phase": "questioning",
+    "current_q_index": 3,
+    "qa_store": {
+      "0": {
+        "question": "How has your sleep quality been over the last two cycles?",
+        "answer": "good",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "1": {
+        "question": "Are you experiencing any difficulty focusing on mission objectives?",
+        "answer": "good",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "2": {
+        "question": "Do you feel a sense of disconnection from the crew or mission control?",
+        "answer": "good",
+        "score": 4,
+        "situation": "low",
+        "condition": "internal decision"
+      },
+      "3": {
+        "question": "How would you describe your emotional state compared to mission launch day?",
+        "answer": null,
+        "score": null,
+        "situation": null,
+        "condition": null
+      }
+    },
+    "followup_question": "",
+    "followup_count": 0,
+    "final_report": "",
+    "overall_situation": "low",
+    "user_answer": "good",
+    "reply": "How would you describe your emotional state compared to mission launch day?",
+    "is_done": false,
+    "score_result": {
+      "score": 4,
+      "situation": "low",
+      "condition": "internal decision"
+    },
+    "is_relevant": true,
+    "psych_result": {},
+    "pending_log": null
+  },
+  "unknown_43yxm6g": {
+    "session_key": "unknown_43yxm6g",
+    "display_identity": "unknown_43yxm6g",
+    "phase": "followup",
+    "current_q_index": 4,
+    "qa_store": {
+      "0": {
+        "question": "How has your sleep quality been over the last two cycles?",
+        "answer": "sad",
+        "score": 14,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      },
+      "1": {
+        "question": "Are you experiencing any difficulty focusing on mission objectives?",
+        "answer": "sad",
+        "score": 14,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      },
+      "2": {
+        "question": "Do you feel a sense of disconnection from the crew or mission control?",
+        "answer": "sad",
+        "score": 12,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      },
+      "3": {
+        "question": "How would you describe your emotional state compared to mission launch day?",
+        "answer": "sad",
+        "score": 12,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      }
+    },
+    "followup_question": "Are you noticing any changes in your physical symptoms, such as headaches or stomach issues, related to this emotional state?",
+    "followup_count": 5,
+    "final_report": "",
+    "overall_situation": "high",
+    "user_answer": "sad",
+    "reply": "Are you noticing any changes in your physical symptoms, such as headaches or stomach issues, related to this emotional state?",
+    "is_done": false,
+    "score_result": {
+      "score": 12,
+      "situation": "high",
+      "condition": "Call the captain and the ground station"
+    },
+    "is_relevant": true,
+    "psych_result": {
+      "type": "followup",
+      "content": "Are you noticing any changes in your physical symptoms, such as headaches or stomach issues, related to this emotional state?"
+    },
+    "pending_log": null
+  },
+  "unknown_ymt3k62": {
+    "session_key": "unknown_ymt3k62",
+    "display_identity": "unknown_ymt3k62",
+    "phase": "followup",
+    "current_q_index": 4,
+    "qa_store": {
+      "0": {
+        "question": "How has your sleep quality been over the last two cycles?",
+        "answer": "sad",
+        "score": 14,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      },
+      "1": {
+        "question": "Are you experiencing any difficulty focusing on mission objectives?",
+        "answer": "sad",
+        "score": 14,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      },
+      "2": {
+        "question": "Do you feel a sense of disconnection from the crew or mission control?",
+        "answer": "i am so sad",
+        "score": 14,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      },
+      "3": {
+        "question": "How would you describe your emotional state compared to mission launch day?",
+        "answer": "bad",
+        "score": 12,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      }
+    },
+    "followup_question": "Are you experiencing any physical symptoms like headaches or fatigue due to your emotional state?",
+    "followup_count": 5,
+    "final_report": "",
+    "overall_situation": "high",
+    "user_answer": "yes",
+    "reply": "Are you experiencing any physical symptoms like headaches or fatigue due to your emotional state?",
+    "is_done": false,
+    "score_result": {
+      "score": 12,
+      "situation": "high",
+      "condition": "Call the captain and the ground station"
+    },
+    "is_relevant": true,
+    "psych_result": {
+      "type": "followup",
+      "content": "Are you experiencing any physical symptoms like headaches or fatigue due to your emotional state?"
+    },
+    "pending_log": null
+  },
+  "unknown_skrhwpt": {
+    "session_key": "unknown_skrhwpt",
+    "display_identity": "unknown_skrhwpt",
+    "phase": "questioning",
+    "current_q_index": 3,
+    "qa_store": {
+      "0": {
+        "question": "How has your sleep quality been over the last two cycles?",
+        "answer": "bad",
+        "score": 12,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      },
+      "1": {
+        "question": "Are you experiencing any difficulty focusing on mission objectives?",
+        "answer": "bad",
+        "score": 14,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      },
+      "2": {
+        "question": "Do you feel a sense of disconnection from the crew or mission control?",
+        "answer": "yes",
+        "score": 14,
+        "situation": "high",
+        "condition": "Call the captain and the ground station"
+      },
+      "3": {
+        "question": "How would you describe your emotional state compared to mission launch day?",
+        "answer": null,
+        "score": null,
+        "situation": null,
+        "condition": null
+      }
+    },
+    "followup_question": "",
+    "followup_count": 0,
+    "final_report": "",
+    "overall_situation": "low",
+    "user_answer": "yes",
+    "reply": "How would you describe your emotional state compared to mission launch day?",
+    "is_done": false,
+    "score_result": {
+      "score": 14,
       "situation": "high",
       "condition": "Call the captain and the ground station"
     },
